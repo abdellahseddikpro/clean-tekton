@@ -1,0 +1,11 @@
+{{- if eq .Values.adminAccess false -}}
+
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: {{ include "tektonClean.fullname" . }}
+rules:
+- apiGroups: ["tekton.dev"]
+  resources: ["pipelineruns"]
+  verbs: ["get", "list", "delete"]
+{{- end -}}
