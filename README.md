@@ -10,4 +10,12 @@ To deploy the cronjob with the needed service account  and permissions use the h
 helm  install -n <namspace> <release name>  helm/tektonClean/
 ```
 
+You can also change the following parameters:
+| Parameters         |Description                                           | Default                           |
+| ------------------ |------------------------------------------------------|-----------------------------------|
+|config.apiUrl       |Url to kuberntes API                                  | https://kubernetes.default.svc/   |
+|config.maxDays      |Number of days                                        | 5                                 |
+|config.schedule     |Cron expression                                       |00 02 * * *                        |
+|adminAccess         |Deleting all resources in all the cluster or Namespace| true                              |
+
 
