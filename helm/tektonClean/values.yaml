@@ -1,7 +1,7 @@
 image:
   repository: abdellahseddikpro/cleantekton
-  tag: 1.0.0
-  pullPolicy: IfNotPresent
+  tag: 1.1.0
+  pullPolicy: Always #IfNotPresent
 
 imagePullSecrets: []
 nameOverride: ""
@@ -14,10 +14,10 @@ serviceAccount:
   annotations: {}
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
-  name:
+  name: garbage-collector
 
 config:
-  apiUrl: "https://kubernetes.default.svc/" 
+  apiUrl: "https://kubernetes.default.svc" 
   maxDays: 5
   schedule: "00 02 * * *"
 adminAccess:  true

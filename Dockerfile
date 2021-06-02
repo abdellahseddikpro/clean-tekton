@@ -1,9 +1,9 @@
-FROM python:3.9.1-alpine
+FROM python:3.9.5-alpine
 ENV PYTHONUNBUFFERED=0
 
 WORKDIR /app
-COPY clean.py ./
+COPY garbage_collector.py ./
 
 RUN pip install --no-cache-dir requests
 
-CMD ["python", "clean.py"]
+CMD ["python", "garbage_collector.py"]
